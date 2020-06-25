@@ -1,4 +1,4 @@
-import { User } from '@models/User'
+import { User } from '@interfaces/User'
 
 test('it should be ok', () => {
   const user = new User()

@@ -20,9 +20,11 @@
     "baseUrl": ".",
     "paths":{
       "@controllers/*": ["./src/controllers/*"],
-      "@models/*": ["./src/models/*"],
+      "@interfaces/*": ["src/interfaces/*"],
+      "@routes/*": ["src/routes/*"],
       "@views/*": ["./src/views/*"],
-      "@config/*": ["./src/config/*"]
+      "@config/*": ["./src/config/*"],
+      "@tests/*": ["./src/tests/*"]
     }
   },
   "include":[

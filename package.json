@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "build": "babel src --extensions \".js,.ts\" --out-dir dist --copy-files --no-copy-ignored",
-    "start": "node dist/server.js",
+    "start": "node dist/index.js",
     "test": "jest",
-    "dev": "ts-node-dev -r tsconfig-paths/register --respawn --transpileOnly --ignore-watch node_modules --no-notify src/server.ts"
+    "dev": "ts-node-dev -r tsconfig-paths/register --respawn --transpileOnly --ignore-watch node_modules --no-notify src/index.ts"
   },
   "repository": "git+https://github.com/VandersonCamatini/transportadora_crud.git",
   "keywords": [],
@@ -40,9 +40,8 @@
   },
   "dependencies": {
     "@types/node": "^14.0.13",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
-    "mysql": "^2.18.1",
-    "reflect-metadata": "^0.1.13",
-    "typeorm": "^0.2.25"
+    "mysql2": "^2.1.0"
   }
 }
