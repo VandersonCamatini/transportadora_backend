@@ -17,7 +17,7 @@ export class App {
     }
 
     middlewares () {
-      this.app.use(express.json()) // urlencoded({ extended: false }) para apenas json
+      this.app.use(express.json()) // urlencoded({ extended: false }) para apenas json e formulario
     }
 
     routes () {
