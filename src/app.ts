@@ -1,6 +1,9 @@
 import express, { Application } from 'express'
 import indexRoutes from '@routes/index.routes'
-import userRoutes from '@routes/users.routes'
+import clientRoutes from '@routes/clients.routes'
+import LoadRoutes from '@routes/loads.routes'
+import addressClientRoutes from '@routes/addressClient.routes'
+import addressLoadRoutes from '@routes/addressLoad.routes'
 
 export class App {
     private app: Application;
@@ -22,7 +25,10 @@ export class App {
 
     routes () {
       this.app.use(indexRoutes)
-      this.app.use('/users', userRoutes)
+      this.app.use('/clients', clientRoutes)
+      this.app.use('/addressClients', addressClientRoutes)
+      this.app.use('/loads', LoadRoutes)
+      this.app.use('/addressLoads', addressLoadRoutes)
     }
 
     async listen () {
