@@ -1,2 +1,2 @@
-# transportadora_crud
- Trabalho da faculdade, desenvolvido em MySQL, Node e React.
+# transportadora_backend
+ Trabalho da faculdade, backend desenvolvido em typescript.
