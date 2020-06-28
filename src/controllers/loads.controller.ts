@@ -4,7 +4,15 @@ import { Load } from '@interfaces/Load.interface'
 
 export async function getLoads (req: Request, res: Response) {
   const conn = await connect()
-  conn.query('SELECT * FROM carga')
+  conn.query(`SELECT
+              cg.*, ct.nome AS nomeCliente , ct.telefone AS telefoneCliente
+            FROM 
+              carga cg
+            INNER JOIN
+              cliente ct
+            WHERE 
+              cg.idCliente = ct.id
+           `)
     .then(retorno => {
       return res.json(retorno[0])
     }).catch(error => {

@@ -1,4 +1,5 @@
 import express, { Application } from 'express'
+import cors from 'cors'
 import indexRoutes from '@routes/index.routes'
 import clientRoutes from '@routes/clients.routes'
 import LoadRoutes from '@routes/loads.routes'
@@ -17,6 +18,7 @@ export class App {
 
     settings () {
       this.app.set('port', this.port || process.env.PORT || 3000)
+      this.app.use(cors())
     }
 
     middlewares () {
