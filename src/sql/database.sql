@@ -4,7 +4,7 @@ CREATE TABLE IF NOT EXISTS cliente(
     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, 
     nome VARCHAR(250) NOT NULL,
     email VARCHAR(250) NOT NULL,
-    telefone varchar(11) NOT NULL
+    telefone VARCHAR(12) NOT NULL
 );
 
 CREATE TABLE IF NOT EXISTS endereco_cliente(
@@ -13,7 +13,7 @@ CREATE TABLE IF NOT EXISTS endereco_cliente(
     numero VARCHAR(11) NOT NULL, 
     bairro VARCHAR(250) NOT NULL,
     estado VARCHAR(250) NOT NULL, 
-    cidade varchar(250) NOT NULL,
+    cidade VARCHAR(250) NOT NULL,
     idCliente INT NOT NULL,
     CONSTRAINT fk_idClienteEndereco FOREIGN KEY (idCliente) REFERENCES cliente (id)
 );
