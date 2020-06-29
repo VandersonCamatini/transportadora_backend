@@ -7,7 +7,7 @@ router.route('/')
   .get(getAddressLoads)
   .post(createAddressLoad)
 
-router.route('/addressLoadId')
+router.route('/:addressLoadId')
   .get(getAddressLoadById)
   .put(updateAddressLoad)
   .delete(deleteAddressLoad)

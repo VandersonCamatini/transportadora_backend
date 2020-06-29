@@ -12,7 +12,7 @@ CREATE TABLE IF NOT EXISTS endereco_cliente(
     logradouro VARCHAR(250) NOT NULL, 
     numero VARCHAR(11) NOT NULL, 
     bairro VARCHAR(250) NOT NULL,
-    ufEstado char(2) NOT NULL, 
+    estado VARCHAR(250) NOT NULL, 
     cidade varchar(250) NOT NULL,
     idCliente INT NOT NULL,
     CONSTRAINT fk_idClienteEndereco FOREIGN KEY (idCliente) REFERENCES cliente (id)
@@ -21,7 +21,7 @@ CREATE TABLE IF NOT EXISTS endereco_cliente(
 CREATE TABLE IF NOT EXISTS carga(
     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     idCliente INT NOT NULL, 
-    dataEntega DATE NOT NULL,
+    dataEntrega DATE NOT NULL,
     dataPrevistaEntrega DATE NOT NULL,
     peso DECIMAL(10,2) NOT NULL, 
     largura DECIMAL(10,2) NOT NULL,
@@ -36,8 +36,8 @@ CREATE TABLE IF NOT EXISTS endereco_carga(
     logradouro VARCHAR(250) NOT NULL, 
     numero VARCHAR(11) NOT NULL, 
     bairro VARCHAR(250) NOT NULL,
-    ufEstado char(2) NOT NULL, 
-    cidade varchar(250) NOT NULL,
+    estado VARCHAR(250) NOT NULL, 
+    cidade VARCHAR(250) NOT NULL,
     idCarga INT NOT NULL,
     CONSTRAINT fk_idCargaEndereco FOREIGN KEY (idCarga) REFERENCES carga (id)
 );

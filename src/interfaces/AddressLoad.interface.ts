@@ -2,7 +2,7 @@ export interface AddressClient{
     logradouro: string;
     numero: string;
     bairro: string;
-    ufEstado: string;
+    estado: string;
     cidade: string;
     idCarga: number;
 }

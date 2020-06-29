@@ -4,7 +4,15 @@ import { Client } from '@interfaces/Client.interface'
 
 export async function getClients (req: Request, res: Response) {
   const conn = await connect()
-  conn.query('SELECT * FROM cliente')
+  conn.query(`SELECT 
+                c.*, ec.logradouro, ec.numero,
+                ec.bairro, ec.estado, ec.cidade, ec.id AS idEndereco
+              FROM 
+                cliente c
+              INNER JOIN
+                endereco_cliente ec
+              WHERE 
+                ec.idCliente = c.id `)
     .then(retorno => {
       return res.json(retorno[0])
     }).catch(error => {
@@ -19,6 +27,7 @@ export async function createClient (req: Request, res: Response) {
     .then(retorno => {
       return res.json(retorno[0].insertId)
     }).catch(error => {
+      console.log(error)
       return res.status(500).send(error)
     })
 }
@@ -41,7 +50,7 @@ export async function deleteClient (req: Request, res: Response) {
     .then(retorno => {
       return res.json(retorno[0].affectedRows)
     }).catch(error => {
-      return error.status(500).send(error)
+      return res.status(500).send(error)
     })
 }
 

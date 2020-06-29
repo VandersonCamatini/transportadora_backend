@@ -50,7 +50,7 @@ export async function updateAddressLoad (req: Request, res:Response) {
 export async function deleteAddressLoad (req: Request, res:Response) {
   const id = req.params.addressLoadId
   const conn = await connect()
-  conn.query('DELETE endereco_carga WHERE id = ?', [id])
+  conn.query('DELETE FROM endereco_carga WHERE id = ?', [id])
     .then(retorno => {
       return res.json(retorno[0].affectedRows)
     }).catch(error => {

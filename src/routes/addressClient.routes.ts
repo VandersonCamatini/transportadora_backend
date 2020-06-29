@@ -7,7 +7,7 @@ router.route('/')
   .get(getAddressClients)
   .post(createAddressClient)
 
-router.route('/addressClientId')
+router.route('/:addressClientId')
   .get(getAddressClientById)
   .put(updateAddressClient)
   .delete(deleteAddressClient)

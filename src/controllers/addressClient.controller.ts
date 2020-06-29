@@ -49,7 +49,7 @@ export async function updateAddressClient (req: Request, res:Response) {
 export async function deleteAddressClient (req: Request, res:Response) {
   const id = req.params.addressClientId
   const conn = await connect()
-  conn.query('DELETE endereco_cliente WHERE id = ?', [id])
+  conn.query('DELETE FROM endereco_cliente WHERE id = ?', [id])
     .then(retorno => {
       return res.json(retorno[0].affectedRows)
     }).catch(error => {
